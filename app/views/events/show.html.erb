@@ -32,7 +32,7 @@
   <% end %>
 </p>
 
-<% if current_user %>
+<% if user_signed_in? %>
   <p>
     <strong>Rate:</strong>
     <%= form_for @event.ratings.build, url: event_ratings_path(@event) do |f| %>
