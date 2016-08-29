@@ -32,12 +32,16 @@
   <% end %>
 </p>
 
-<p>
-  <strong>Rate:</strong>
-  <%= form_for @event.ratings.build, url: event_ratings_path(@event) do |f| %>
-  <%= f.number_field :rating, max: 5, min: 0 %>
-  <%= f.submit %>
-</p>
+<% if current_user %>
+  <p>
+    <strong>Rate:</strong>
+    <%= form_for @event.ratings.build, url: event_ratings_path(@event) do |f| %>
+      <%= f.number_field :rating, max: 5, min: 0 %>
+      <%= f.submit %>
+    <% end %>
+  </p>
+<% else %>
+  <%= link_to 'Sign in to rate!', new_user_session_path %>
 <% end %>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
