@@ -20,5 +20,25 @@
   <%= @event.date %>
 </p>
 
+<p>
+  <strong>Countdown: </strong>
+  <%= distance @event.date  %>
+</p>
+
+<p>
+  <strong>Average Rating:</strong>
+  <% @event.ratings.average(:rating).to_i.times do %>
+    <%= image_tag "star" , size:"15x15" %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= form_for @event.ratings.build, url: event_ratings_path(@event) do |f| %>
+  <%= f.number_field :rating, max: 5, min: 0 %>
+  <%= f.submit %>
+</p>
+<% end %>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
