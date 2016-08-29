@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+gem 'zurb-foundation', '~> 4.2.2'
 gem 'devise'
 gem 'ratyrate'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

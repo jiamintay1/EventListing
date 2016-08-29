@@ -1,22 +1,23 @@
 <p id="notice"><%= notice %></p>
 
+<div id="title"
 <p>
-  <strong>Title:</strong>
-  <%= @event.title %>
+  <strong><%= @event.title %></strong>
 </p>
+</div>
 
 <p>
-  <strong>Description:</strong>
-  <%= @event.description %>
+  <i><%= @event.description %></i>
+
 </p>
 
-<p>
-  <strong>Picture:</strong>
+  <p>
   <%= image_tag(@event.picture_url, width:600) if @event.picture.present? %>
 </p>
 
+
 <p>
-  <strong>Date:</strong>
+  <strong>Event Date:</strong>
   <%= @event.date %>
 </p>
 
