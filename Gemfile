@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'sqlite3'
 gem 'zurb-foundation', '~> 4.2.2'
 gem 'devise'
 gem 'ratyrate'
